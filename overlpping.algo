@@ -1,0 +1,46 @@
+//Htable
+ALGORITHM sum2
+VAR
+    i,j,count: INTEGER;
+    Set1: ARRAY_OF INTEGER[i];
+    Set2:ARRAY_OF INTEGER[j];
+    htab : HASH_TABLE<ARRAY_OF INTEGER[x];
+    sum:INTEGER:=0;
+BEGIN
+    
+    FOR i FROM 0 TO i-1 DO
+        Read(set1[i]);
+    END_FOR
+    FOR j FROM 0 TO j-1 DO
+        Read(set2[j]);
+    END_FOR
+    FOR i FROM 0 TO Set1.length-1 DO
+        IF (htab.lookup(Set1[i]) = TRUE) THEN
+            count := htab.get(Set1[i]);
+            htab.insert(Set1[i],count+1);
+        ELSE
+            htab.insert(Set1[i],1);
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO Set2.length-1 DO
+        IF (htab.lookup(Set2[j]) = TRUE) THEN
+            count := htab.get(Set2[j]);
+            htab.insert(Set2[j],count+1);
+        ELSE
+            htab.insert(Set2[j],1);
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO Set1.length-1 DO
+        IF (htab.get(Set1[i]) = 1) THEN
+            sum:=sum+Set1[i];
+            BREAK;
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO Set2.length-1 DO
+        IF (htab.get(Set2[j]) = 1) THEN
+            sum:=sum+Set2[j];
+            BREAK;
+        END_IF
+    END_FOR
+    Write(sum)
+END

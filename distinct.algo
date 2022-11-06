@@ -1,0 +1,41 @@
+// ALGORITHM sum 
+ALGORITHM sum2
+VAR 
+   i:INTEGER;
+   j:INTEGER; 
+   sum :INTEGER:=0;
+   isdiff:= BOOLEAN;
+   Set1:ARRAY_OF INTEGER[i];
+   Set2:ARRAY_OF INTEGER[j];
+BEGIN
+    For i FROM 0 to Set1.length DO
+      Read(Set1[i]);
+    END_FOR
+    For j FROM 0 to Set2.length DO
+      Read(Set2[j]);
+    END_FOR    
+    For i FROM 0 to Set1.length DO
+      isdiff:=TRUE;
+    For j FROM 0 to Set2.length DO
+      IF (Set1[i] == Set2[j]) THEN
+        isdiff:=FALSE;
+      END_IF
+    END_FOR  
+
+IF (isdiff=TRUE) THEN sum:=sum+Set1[i]
+    END_IF
+    END_FOR
+
+    FOR j FROM 0 TO Set2.length DO
+        isdiff:=TRUE;
+    FOR i FROM 0 TO Set1.length DO
+        IF (Set1[i]=Set2[j]) THEN
+           isdiff:=FALSE;
+            END_IF
+        END_FOR
+        IF (isdiff=TRUE) THEN
+            sum:=sum+Set2[j]
+        END_IF
+    END_FOR
+    Write(sum)
+END
